@@ -380,7 +380,7 @@ Edit: `src/styles/index.css` for global styles
 
 For questions or support:
 - **Email:** info@policynivesh.com
-- **Phone:** +91 98765 43210
+- **Phone:** +91 6280000874
 
 ---
 

@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
     'Expert insurance advisory services helping you find the perfect life, health, and investment insurance solutions.',
   url: 'https://policynivesh.com',
   email: 'info@policynivesh.com',
-  phone: '+91 98765 43210',
+  phone: '+91 6280000874',
   address: 'Mumbai, Maharashtra, India',
 } as const;
 
