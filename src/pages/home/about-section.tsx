@@ -1,26 +1,35 @@
-import { CheckCircle, Target, Heart, TrendingUp } from 'lucide-react';
+import { Award, Eye, Smartphone } from 'lucide-react';
 import Container from '../../components/ui/container';
 import Section from '../../components/ui/section';
 
 /**
- * About section component
+ * Why Choose Us section component with features and stats
  */
 export default function AboutSection() {
-  const values = [
+  const features = [
     {
-      icon: Target,
-      title: 'Client-Focused',
-      description: 'Your financial goals are our top priority',
+      icon: Award,
+      title: 'Expert Advisory',
+      description:
+        'Certified financial advisors with 10+ years of experience in wealth management and investment planning.',
+      bgColor: 'bg-blue-100',
+      iconColor: 'text-primary-600',
     },
     {
-      icon: Heart,
-      title: 'Trustworthy',
-      description: 'Building lasting relationships based on trust',
+      icon: Eye,
+      title: 'Complete Transparency',
+      description:
+        'No hidden fees, clear terms, and honest advice. You\'ll always know exactly what you\'re investing in and why.',
+      bgColor: 'bg-green-100',
+      iconColor: 'text-success-600',
     },
     {
-      icon: TrendingUp,
-      title: 'Results-Driven',
-      description: 'Proven track record of successful outcomes',
+      icon: Smartphone,
+      title: 'Mobile-First Experience',
+      description:
+        'Manage your investments on-the-go with our intuitive mobile platform designed for modern investors.',
+      bgColor: 'bg-purple-100',
+      iconColor: 'text-purple-600',
     },
   ];
 
@@ -28,80 +37,71 @@ export default function AboutSection() {
     <Section id="about" background="white">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left - Content */}
-          <div className="space-y-6">
-            <div className="inline-block px-4 py-2 bg-primary-100 text-primary-600 rounded-full text-sm font-semibold">
-              About Us
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Your Trusted Partner in Financial Security
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              With over a decade of experience in the insurance industry, Policy
-              Nivesh has helped thousands of families secure their financial
-              future through expert guidance and personalized insurance solutions.
-            </p>
+          {/* Left - Content & Features */}
+          <div className="space-y-8">
             <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">
-                    Expert Guidance
-                  </h4>
-                  <p className="text-gray-600">
-                    Our certified advisors provide unbiased recommendations
-                    tailored to your unique needs.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">
-                    Comprehensive Coverage
-                  </h4>
-                  <p className="text-gray-600">
-                    Access to a wide range of insurance products from leading
-                    providers.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">
-                    Lifetime Support
-                  </h4>
-                  <p className="text-gray-600">
-                    We're with you every step of the way, from purchase to claims.
-                  </p>
-                </div>
-              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                Why Choose Policy Nivesh?
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                We believe that smart investing should be accessible to everyone. Our
+                mission is to democratize financial advisory services through technology,
+                transparency, and trust.
+              </p>
+            </div>
+
+            {/* Features */}
+            <div className="space-y-6">
+              {features.map((feature, index) => {
+                const Icon = feature.icon;
+                return (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className={`${feature.bgColor} w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0`}>
+                      <Icon className={`w-6 h-6 ${feature.iconColor}`} />
+                    </div>
+                    <div className="space-y-1">
+                      <h3 className="text-lg font-semibold text-gray-900">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          {/* Right - Values */}
-          <div className="grid grid-cols-1 gap-6">
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className="flex items-start space-x-4 p-6 bg-white rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-200"
-              >
-                <div className="p-3 bg-primary-100 rounded-xl flex-shrink-0">
-                  <value.icon className="w-6 h-6 text-primary-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-600">{value.description}</p>
-                </div>
+          {/* Right - Image with Floating Stats */}
+          <div className="relative">
+            {/* Main Image */}
+            <div className="bg-gradient-to-br from-blue-100 via-green-50 to-purple-100 rounded-2xl shadow-2xl h-96 flex items-center justify-center overflow-hidden">
+              <div className="text-center p-8">
+                <div className="text-8xl mb-4">🤝</div>
+                <p className="text-2xl font-semibold text-gray-800">
+                  Financial Advisory Team
+                </p>
               </div>
-            ))}
+            </div>
+
+            {/* Floating Stat Cards */}
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 animate-pulse">
+              <div className="space-y-2">
+                <p className="text-3xl font-bold text-primary-600">10,000+</p>
+                <p className="text-sm text-gray-600">Happy Investors</p>
+              </div>
+            </div>
+
+            <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-xl p-6 animate-pulse">
+              <div className="space-y-2">
+                <p className="text-3xl font-bold text-success-600">₹500Cr+</p>
+                <p className="text-sm text-gray-600">Assets Managed</p>
+              </div>
+            </div>
           </div>
         </div>
       </Container>
     </Section>
   );
 }
-

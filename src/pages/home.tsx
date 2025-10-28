@@ -1,8 +1,8 @@
 import SEOHead from '../components/seo/seo-head';
 import HeroSection from './home/hero-section';
-import AboutSection from './home/about-section';
 import ServicesSection from './home/services-section';
-import BenefitsSection from './home/benefits-section';
+import InsightsSection from './home/insights-section';
+import AboutSection from './home/about-section';
 import ContactSection from './home/contact-section';
 import { mergeSEOMetadata, getOrganizationStructuredData } from '../utils/seo-helpers';
 
@@ -24,9 +24,9 @@ export default function Home() {
         structuredData={getOrganizationStructuredData()}
       />
       <HeroSection />
-      <AboutSection />
       <ServicesSection />
-      <BenefitsSection />
+      <InsightsSection />
+      <AboutSection />
       <ContactSection />
     </>
   );

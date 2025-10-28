@@ -9,11 +9,16 @@
   
   body {
     @apply bg-white text-gray-900 antialiased;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', 'Nimbus Sans', system-ui, -apple-system, sans-serif;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Better focus visible for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-600;
   }
 }
 
@@ -26,12 +31,30 @@
   .section-padding {
     @apply py-12 md:py-16 lg:py-20;
   }
+
+  /* Gradient text utility */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-success-600;
+  }
 }
 
 @layer utilities {
   /* Custom utility classes */
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Animation delays for staggered animations */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 300ms;
   }
 }
 
