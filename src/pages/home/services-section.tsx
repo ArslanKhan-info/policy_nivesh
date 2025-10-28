@@ -16,20 +16,7 @@ import FeatureCard from '../../components/ui/feature-card';
  */
 export default function ServicesSection() {
   const services = [
-    {
-      icon: Heart,
-      title: 'Life Insurance',
-      description:
-        'Protect your loved ones with comprehensive life insurance plans tailored to your family needs.',
-      link: '/category/life-insurance',
-    },
-    {
-      icon: Shield,
-      title: 'Health Insurance',
-      description:
-        'Get complete health coverage for you and your family with cashless hospitalization benefits.',
-      link: null, // No products yet
-    },
+   
     {
       icon: TrendingUp,
       title: 'Investment Plans',
@@ -56,7 +43,21 @@ export default function ServicesSection() {
       title: 'Home Insurance',
       description:
         'Safeguard your home and belongings against unforeseen events and natural disasters.',
-      link: null, // No products yet
+      link: '/category/home-insurance',
+    },
+    {
+      icon: Heart,
+      title: 'Life Insurance',
+      description:
+        'Protect your loved ones with comprehensive life insurance plans tailored to your family needs.',
+      link: '/category/life-insurance',
+    },
+    {
+      icon: Shield,
+      title: 'Health Insurance',
+      description:
+        'Get complete health coverage for you and your family with cashless hospitalization benefits.',
+      link: '/category/health-insurance', // No products yet
     },
   ];
 

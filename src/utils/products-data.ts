@@ -17,7 +17,7 @@ export interface ProductBenefit {
 export interface Product {
   id: string;
   slug: string;
-  category: 'retirement' | 'investment' | 'child-education' | 'life-insurance';
+  category: 'life-insurance' | 'health-insurance' | 'investment' | 'retirement' | 'child-education' | 'home-insurance';
   title: string;
   tagline: string;
   headline: string;
@@ -330,25 +330,35 @@ export const PRODUCTS: Product[] = [
 
 // Category mapping
 export const PRODUCT_CATEGORIES = {
-  retirement: {
-    title: 'Retirement Planning',
-    description: 'Secure your golden years with pension plans designed for a worry-free retirement.',
-    slug: 'retirement-planning',
+  'life-insurance': {
+    title: 'Life Insurance',
+    description: 'Protect your loved ones with comprehensive life insurance plans tailored to your family needs.',
+    slug: 'life-insurance',
+  },
+  'health-insurance': {
+    title: 'Health Insurance',
+    description: 'Get complete health coverage for you and your family with cashless hospitalization benefits.',
+    slug: 'health-insurance',
   },
   investment: {
     title: 'Investment Plans',
     description: 'Build wealth with smart investment-linked insurance plans offering guaranteed returns.',
     slug: 'investment-plans',
   },
+  retirement: {
+    title: 'Retirement Planning',
+    description: 'Secure your golden years with pension plans designed for a worry-free retirement.',
+    slug: 'retirement-planning',
+  },
   'child-education': {
     title: 'Child Education',
     description: 'Ensure your child education goals are met with dedicated education insurance plans.',
     slug: 'child-education',
   },
-  'life-insurance': {
-    title: 'Life Insurance',
-    description: 'Protect your loved ones with comprehensive life insurance plans tailored to your family needs.',
-    slug: 'life-insurance',
+  'home-insurance': {
+    title: 'Home Insurance',
+    description: 'Safeguard your home and belongings against unforeseen events and natural disasters.',
+    slug: 'home-insurance',
   },
 } as const;
 
