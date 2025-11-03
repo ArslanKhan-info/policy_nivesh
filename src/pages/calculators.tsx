@@ -4,7 +4,6 @@ import SEOHead from '../components/seo/seo-head';
 import Container from '../components/ui/container';
 import Section from '../components/ui/section';
 import Card from '../components/ui/card';
-import Button from '../components/ui/button';
 import { mergeSEOMetadata } from '../utils/seo-helpers';
 
 type CalculatorType = 'emi' | 'home-loan' | 'sip' | 'fd' | 'rd';

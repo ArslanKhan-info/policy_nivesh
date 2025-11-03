@@ -6,6 +6,7 @@ export interface SEOMetadata {
   title: string;
   description: string;
   canonical: string;
+  keywords?: string;
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
