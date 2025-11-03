@@ -40,15 +40,34 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) => {
+              // Use Link component for routes, anchor tag for hash links
+              const isRoute = !link.href.startsWith('/#');
+              const isCalculators = link.href === '/calculators';
+              
+              // Special styling for Calculators link
+              const linkClassName = isCalculators
+                ? 'px-4 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg hover:from-primary-600 hover:to-primary-700 font-semibold transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105'
+                : 'text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200';
+              
+              return isRoute ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={linkClassName}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={linkClassName}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </div>
 
           {/* Desktop CTA */}
@@ -78,16 +97,36 @@ export default function Header() {
         {isOpen && (
           <div className="md:hidden mt-4 pb-4 animate-slide-down">
             <div className="flex flex-col space-y-4">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={handleNavClick}
-                  className="text-gray-700 hover:text-primary-600 font-medium transition-colors px-4 py-2 rounded-lg hover:bg-gray-50"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {NAV_LINKS.map((link) => {
+                // Use Link component for routes, anchor tag for hash links
+                const isRoute = !link.href.startsWith('/#');
+                const isCalculators = link.href === '/calculators';
+                
+                // Special styling for Calculators link
+                const linkClassName = isCalculators
+                  ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold px-4 py-3 rounded-lg hover:from-primary-600 hover:to-primary-700 transition-all shadow-md'
+                  : 'text-gray-700 hover:text-primary-600 font-medium transition-colors px-4 py-2 rounded-lg hover:bg-gray-50';
+                
+                return isRoute ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={handleNavClick}
+                    className={linkClassName}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={handleNavClick}
+                    className={linkClassName}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
               <div className="flex flex-col space-y-2 px-4 pt-4 border-t border-gray-200">
                 <a
                   href={`tel:${SITE_CONFIG.phone}`}

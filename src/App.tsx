@@ -3,6 +3,7 @@ import Layout from './layouts/layout';
 import Home from './pages/home';
 import CategoryPage from './pages/category';
 import ProductDetail from './pages/product-detail';
+import Calculators from './pages/calculators';
 import ScrollToTop from './components/scroll-to-top';
 
 /**
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="calculators" element={<Calculators />} />
           <Route path="category/:categorySlug" element={<CategoryPage />} />
           <Route path="products/:productSlug" element={<ProductDetail />} />
         </Route>
