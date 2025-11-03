@@ -32,10 +32,14 @@ export default function Header() {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center space-x-2 text-2xl font-bold text-primary-600"
+            className="flex items-center space-x-2"
             onClick={handleNavClick}
           >
-            <span>{SITE_CONFIG.name}</span>
+            <img 
+              src="/logoText.png" 
+              alt={SITE_CONFIG.name}
+              className="h-10 md:h-16 object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}

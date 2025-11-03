@@ -1,0 +1,25 @@
+{
+  "name": "Policy Nivesh - Your Trusted Insurance Advisor",
+  "short_name": "Policy Nivesh",
+  "description": "Expert insurance advisory services helping you find the perfect life, health, and investment insurance solutions.",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#0ea5e9",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "orientation": "portrait-primary"
+}
+
